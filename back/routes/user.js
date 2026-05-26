@@ -19,7 +19,7 @@ router.post('/login', async (req, res) => {
       [userId],
       {outFormat: oracledb.OUT_FORMAT_OBJECT}
     );
-
+   
     let isLogin = false;
     let message = "로그인 실패!";
     if(result.rows.length > 0){
