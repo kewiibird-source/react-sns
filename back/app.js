@@ -7,6 +7,7 @@ var QRCode = require('qrcode')
 // router
 const sampleRouter = require("./routes/sample");
 const userRouter = require("./routes/user");
+const feedRouter = require("./routes/feed");
 
 const db = require("./db");
 
@@ -14,12 +15,13 @@ const app = express();
 app.use(cors());
 app.use(express.json())
 
-// ejs 설정
+// ejs 설정.
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '.')); // .은 경로
 
 app.use("/sample", sampleRouter);
 app.use("/user", userRouter);
+app.use("/feed", feedRouter);
 
 async function startServer() {
   try {

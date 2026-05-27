@@ -44,7 +44,13 @@ function Login() {
             .then(res => res.json())
             .then(data => {
               alert(data.message);
-              navigator("/feed");
+              if(data.result){
+                // result = isLogin의 값이 true일때만 피드로 이동하도록
+                navigator("/feed");
+                // localStorage에 token 넣기
+                localStorage.setItem("token", data.token);
+              }
+              
             })
             .catch(err => {
               alert("서버 에러 발생!");
