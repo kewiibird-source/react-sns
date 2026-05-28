@@ -7,10 +7,14 @@ import Feed from './components/Feed';
 import Register from './components/Register';
 import MyPage from './components/MyPage';
 import Menu from './components/Menu'; // Menu로 변경
+import ContextEx1 from './components/ContextEx1';
+import ContextEx2 from './components/ContextEx2';
+import ContextEx3 from './components/ContextEx3';
 
 function App() {
   const location = useLocation();
   const isAuthPage = location.pathname === '/' || location.pathname === '/join';
+  // 로그인, 회원가입 페이지 이외에 사이드메뉴 나타내기
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -23,6 +27,10 @@ function App() {
           <Route path="/feed" element={<Feed />} />
           <Route path="/register" element={<Register />} />
           <Route path="/mypage" element={<MyPage />} />
+
+          <Route path="/contextex1" element={<ContextEx1 />} />
+          <Route path="/contextex2" element={<ContextEx2 />} />
+          <Route path="/contextex3" element={<ContextEx3 />} />
         </Routes>
       </Box>
     </Box>

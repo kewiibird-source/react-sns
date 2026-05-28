@@ -39,6 +39,27 @@ function Menu() {
           </ListItemIcon>
           <ListItemText primary="마이페이지" />
         </ListItem>
+
+        <ListItem button component={Link} to="/contextex1">
+          <ListItemIcon>
+            <AccountCircle />
+          </ListItemIcon>
+          <ListItemText primary="Context 실습1" />
+        </ListItem>
+
+        <ListItem button component={Link} to="/contextex2">
+          <ListItemIcon>
+            <AccountCircle />
+          </ListItemIcon>
+          <ListItemText primary="Context 실습2" />
+        </ListItem>
+
+        <ListItem button component={Link} to="/contextex3">
+          <ListItemIcon>
+            <AccountCircle />
+          </ListItemIcon>
+          <ListItemText primary="Context 다크모드" />
+        </ListItem>
       </List>
     </Drawer>
   );

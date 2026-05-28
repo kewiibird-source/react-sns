@@ -6,8 +6,8 @@ const jwtAuthentication = require('../auth')
 const db = require("../db");
 
 const router = express.Router();
-
-const JWT_KEY = "secret_key"; 
+require("dotenv").config();
+const JWT_KEY = process.env.jwt_key; // .env사용
 // 해시 함수 실행 위해 사용할 키로 아주 긴 랜덤한 문자를 사용하길 권장하며, 노출되면 안됨.
 // .env로 관리해야 한다
 
@@ -77,6 +77,7 @@ router.post('/login', async (req, res) => {
         }
 
         token = jwt.sign(payload, JWT_KEY, {expiresIn : '1h'});
+        console.log(JWT_KEY);
         console.log(token);
       } 
     }
